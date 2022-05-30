@@ -1,10 +1,11 @@
 {
-    "name": "phpcollection/phpcollection",
+    "name": "mattiabasone/phpcollection",
     "description": "General-Purpose Collection Library for PHP",
     "keywords": ["collection", "list", "sequence", "map", "set"],
     "license": "Apache2",
     "authors": [
-        {"name": "Johannes M. Schmitt", "email": "schmittjoh@gmail.com"}
+        {"name": "Johannes M. Schmitt", "email": "schmittjoh@gmail.com"},
+        {"name": "Mattia Basone", "email": "mattia.basone@gmail.com"}
     ],
     "require": {
         "php": "^8.0",
