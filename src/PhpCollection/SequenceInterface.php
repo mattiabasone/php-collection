@@ -151,7 +151,7 @@ interface SequenceInterface extends CollectionInterface
      *
      * @return void
      */
-    public function addAll(array $addedElements);
+    public function addAll(array $addedElements): void;
 
     /**
      * Updates the value at the given index.

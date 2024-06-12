@@ -8,22 +8,22 @@ class DateTimeHandler implements ObjectBasicsHandler
 {
     public function hash($object): string|int
     {
-        if (!$object instanceof \DateTime) {
+        if (!$object instanceof \DateTimeInterface) {
             throw new \LogicException('$object must be an instance of \DateTime.');
         }
 
         return $object->getTimestamp();
     }
 
-    public function equals($thisObject, $otherObject): bool
+    public function equals($firstObject, $secondObject): bool
     {
-        if (!$thisObject instanceof \DateTime) {
+        if (!$firstObject instanceof \DateTimeInterface) {
             throw new \LogicException('$thisObject must be an instance of \DateTime.');
         }
-        if (!$otherObject instanceof \DateTime) {
+        if (!$secondObject instanceof \DateTimeInterface) {
             return false;
         }
 
-        return $thisObject->format(\DateTime::ISO8601) === $otherObject->format(\DateTime::ISO8601);
+        return $firstObject->format(\DateTimeInterface::ATOM) === $secondObject->format(\DateTimeInterface::ATOM);
     }
 }

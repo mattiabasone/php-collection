@@ -16,6 +16,7 @@ abstract class ObjectBasicsHandlerRegistry
 {
     private static array $handlers = [
         \DateTime::class => ObjectBasicsHandler\DateTimeHandler::class,
+        \DateTimeImmutable::class => ObjectBasicsHandler\DateTimeHandler::class,
     ];
     private static $defaultObjectHandler;
 
@@ -38,12 +39,12 @@ abstract class ObjectBasicsHandlerRegistry
      * @param string $handlingClass The class that should be aliased, i.e. MyDateTime
      * @param string $aliasClass The class that should be used instead, i.e. DateTime
      */
-    public static function addAliasFor($handlingClass, $aliasClass)
+    public static function addAliasFor($handlingClass, $aliasClass): void
     {
         self::$aliases[$handlingClass] = $aliasClass;
     }
 
-    public static function addHandlerFor($handlingClass, $handlerInstanceOrClassName)
+    public static function addHandlerFor($handlingClass, $handlerInstanceOrClassName): void
     {
         if (!$handlerInstanceOrClassName instanceof ObjectBasicsHandler && !is_string($handlerInstanceOrClassName)) {
             throw new \LogicException('$handler must be an instance of ObjectBasicsHandler, or a string referring to the handlers class.');
@@ -52,7 +53,7 @@ abstract class ObjectBasicsHandlerRegistry
         self::$handlers[$handlingClass] = $handlerInstanceOrClassName;
     }
 
-    public static function getHandler($className)
+    public static function getHandler($className): ObjectBasicsHandler
     {
         if (isset(self::$aliases[$className])) {
             $className = self::$aliases[$className];

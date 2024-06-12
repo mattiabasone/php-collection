@@ -243,7 +243,7 @@ class AbstractSequence extends AbstractCollection implements \IteratorAggregate,
         $this->elements[] = $newElement;
     }
 
-    public function addAll(array $addedElements)
+    public function addAll(array $addedElements): void
     {
         foreach ($addedElements as $newElement) {
             $this->elements[] = $newElement;
