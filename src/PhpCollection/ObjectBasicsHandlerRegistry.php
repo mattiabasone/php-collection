@@ -15,7 +15,7 @@ use PhpCollection\ObjectBasicsHandler\IdentityHandler;
 abstract class ObjectBasicsHandlerRegistry
 {
     private static array $handlers = [
-        \DateTime::class => \PhpCollection\ObjectBasicsHandler\DateTimeHandler::class,
+        \DateTime::class => ObjectBasicsHandler\DateTimeHandler::class,
     ];
     private static $defaultObjectHandler;
 

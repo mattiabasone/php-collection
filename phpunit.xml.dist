@@ -1,31 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<phpunit backupGlobals="false"
-         backupStaticAttributes="false"
-         colors="true"
-         convertErrorsToExceptions="true"
-         convertNoticesToExceptions="true"
-         convertWarningsToExceptions="true"
-         convertDeprecationsToExceptions="true"
-         processIsolation="false"
-         stopOnFailure="false"
-         bootstrap="tests/bootstrap.php"
->
-    <testsuites>
-        <testsuite name="PhpCollection Test Suite">
-            <directory>./tests/PhpCollection/</directory>
-        </testsuite>
-    </testsuites>
-
-    <coverage processUncoveredFiles="true">
-        <include>
-            <directory suffix=".php">src</directory>
-        </include>
-    </coverage>
-
-    <groups>
-        <exclude>
-            <group>performance</group>
-        </exclude>
-    </groups>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" backupGlobals="false" colors="true" processIsolation="false" stopOnFailure="false" bootstrap="tests/bootstrap.php" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.5/phpunit.xsd" cacheDirectory=".phpunit.cache" backupStaticProperties="false">
+  <testsuites>
+    <testsuite name="PhpCollection Test Suite">
+      <directory>./tests/PhpCollection/</directory>
+    </testsuite>
+  </testsuites>
+  <groups>
+    <exclude>
+      <group>performance</group>
+    </exclude>
+  </groups>
+  <source>
+    <include>
+      <directory suffix=".php">src</directory>
+    </include>
+  </source>
 </phpunit>

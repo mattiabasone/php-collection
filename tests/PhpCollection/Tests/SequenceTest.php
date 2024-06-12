@@ -4,7 +4,6 @@ namespace PhpCollection\Tests;
 
 use PhpCollection\Sequence;
 use PHPUnit\Framework\TestCase;
-use stdClass;
 
 class SequenceTest extends TestCase
 {
@@ -138,7 +137,7 @@ class SequenceTest extends TestCase
         $this->assertTrue($this->seq->contains(0));
         $this->assertTrue($this->seq->contains($this->a));
         $this->assertFalse($this->seq->contains(9999));
-        $this->assertFalse($this->seq->contains(new stdClass()));
+        $this->assertFalse($this->seq->contains(new \stdClass()));
     }
 
     public function testExists(): void
@@ -325,7 +324,7 @@ class SequenceTest extends TestCase
             default => $self->fail('Unexpected element: '.var_export($elem, true)),
         });
 
-        $this->assertInstanceOf(\PhpCollection\Sequence::class, $newSeq);
+        $this->assertInstanceOf(Sequence::class, $newSeq);
         $this->assertNotSame($newSeq, $seq);
         $this->assertEquals(['c', 'd'], $newSeq->all());
     }
