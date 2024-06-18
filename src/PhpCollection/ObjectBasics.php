@@ -34,5 +34,5 @@ interface ObjectBasics
      *
      * @return bool
      */
-    public function equals(ObjectBasics $other);
+    public function equals(ObjectBasics $other): bool;
 }

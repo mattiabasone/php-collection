@@ -11,12 +11,12 @@ namespace PhpCollection;
  */
 trait EntityLikeObject
 {
-    public function hash()
+    public function hash(): string
     {
         return spl_object_hash($this);
     }
 
-    public function equals(ObjectBasics $other)
+    public function equals(ObjectBasics $other): bool
     {
         return $this === $other;
     }

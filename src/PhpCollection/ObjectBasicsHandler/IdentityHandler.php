@@ -11,8 +11,8 @@ class IdentityHandler implements ObjectBasicsHandler
         return spl_object_hash($object);
     }
 
-    public function equals($a, $b): bool
+    public function equals($firstObject, $secondObject): bool
     {
-        return $a === $b;
+        return $firstObject === $secondObject;
     }
 }

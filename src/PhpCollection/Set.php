@@ -342,7 +342,7 @@ class Set implements SetInterface
         return false;
     }
 
-    private function removeScalar($elem)
+    private function removeScalar(mixed $elem): void
     {
         if (!isset($this->lookup[$elem])) {
             return;
@@ -357,7 +357,7 @@ class Set implements SetInterface
         }
     }
 
-    private function removeObjectWithHandler($object, ObjectBasicsHandler $handler)
+    private function removeObjectWithHandler($object, ObjectBasicsHandler $handler): void
     {
         $hash = $handler->hash($object);
         if (!isset($this->lookup[$hash])) {
@@ -373,7 +373,7 @@ class Set implements SetInterface
         }
     }
 
-    private function removeObject(ObjectBasics $object)
+    private function removeObject(ObjectBasics $object): void
     {
         $hash = $object->hash();
         if (!isset($this->lookup[$hash])) {
@@ -389,7 +389,7 @@ class Set implements SetInterface
         }
     }
 
-    private function removeElement($hash, $lookupIndex, $storageIndex)
+    private function removeElement($hash, $lookupIndex, $storageIndex): void
     {
         unset($this->lookup[$hash][$lookupIndex]);
         if (empty($this->lookup[$hash])) {
@@ -399,7 +399,7 @@ class Set implements SetInterface
         unset($this->elements[$storageIndex]);
     }
 
-    private function addScalar($elem)
+    private function addScalar($elem): void
     {
         if (isset($this->lookup[$elem])) {
             foreach ($this->lookup[$elem] as $index) {
@@ -413,7 +413,7 @@ class Set implements SetInterface
         $this->elementType = self::ELEM_TYPE_SCALAR;
     }
 
-    private function addObjectWithHandler($object, ObjectBasicsHandler $handler)
+    private function addObjectWithHandler($object, ObjectBasicsHandler $handler): void
     {
         $hash = $handler->hash($object);
         if (isset($this->lookup[$hash])) {
@@ -428,7 +428,7 @@ class Set implements SetInterface
         $this->elementType = self::ELEM_TYPE_OBJECT_WITH_HANDLER;
     }
 
-    private function addObject(ObjectBasics $elem)
+    private function addObject(ObjectBasics $elem): void
     {
         $hash = $elem->hash();
         if (isset($this->lookup[$hash])) {
@@ -443,7 +443,7 @@ class Set implements SetInterface
         $this->elementType = self::ELEM_TYPE_OBJECT;
     }
 
-    private function insertElement($elem, $hash)
+    private function insertElement($elem, $hash): void
     {
         $index = $this->elementCount++;
         $this->elements[$index] = $elem;

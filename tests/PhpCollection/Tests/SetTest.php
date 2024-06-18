@@ -144,12 +144,12 @@ class SetTest extends TestCase
     {
         $this->set->add((new \DateTime('today'))->setTimezone(new \DateTimeZone('UTC')));
         $this->set->add((new \DateTime('today'))->setTimezone(new \DateTimeZone('UTC')));
-        $this->set->add((new \DateTime('today'))->setTimezone(new \DateTimeZone('US/Pacific')));
+        $this->set->add((new \DateTime('today'))->setTimezone(new \DateTimeZone('America/Los_Angeles')));
 
         $this->assertEquals(
             [
                 (new \DateTime('today'))->setTimezone(new \DateTimeZone('UTC')),
-                (new \DateTime('today'))->setTimezone(new \DateTimeZone('US/Pacific')),
+                (new \DateTime('today'))->setTimezone(new \DateTimeZone('America/Los_Angeles')),
             ],
             $this->set->all()
         );
