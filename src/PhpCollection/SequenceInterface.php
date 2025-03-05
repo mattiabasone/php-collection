@@ -32,45 +32,31 @@ interface SequenceInterface extends CollectionInterface
 {
     /**
      * Returns the first element in the collection if available.
-     *
-     * @return Some|None
      */
     public function first(): Some|None;
 
     /**
      * Returns the last element in the collection if available.
-     *
-     * @return Some|None
      */
     public function last(): Some|None;
 
     /**
      * Returns all elements in this sequence.
-     *
-     * @return array
      */
     public function all(): array;
 
     /**
      * Returns a new Sequence with all elements in reverse order.
-     *
-     * @return SequenceInterface
      */
     public function reverse(): SequenceInterface;
 
     /**
      * Adds the elements of another sequence to this sequence.
-     *
-     * @param SequenceInterface $seq
-     *
-     * @return SequenceInterface
      */
     public function addSequence(SequenceInterface $seq): SequenceInterface;
 
     /**
      * Returns the index of the passed element.
-     *
-     * @param mixed $searchedElement
      *
      * @return int the index (0-based), or -1 if not found
      */
@@ -79,7 +65,6 @@ interface SequenceInterface extends CollectionInterface
     /**
      * Returns the last index of the passed element.
      *
-     * @param mixed $searchedElement
      * @return int the index (0-based), or -1 if not found
      */
     public function lastIndexOf(mixed $searchedElement): int;
@@ -88,7 +73,6 @@ interface SequenceInterface extends CollectionInterface
      * Returns whether the given index is defined in the sequence.
      *
      * @param int $index (0-based)
-     * @return bool
      */
     public function isDefinedAt(int $index): bool;
 
@@ -121,17 +105,11 @@ interface SequenceInterface extends CollectionInterface
      * Returns the element at the given index.
      *
      * @param int $index (0-based)
-     *
-     * @return mixed
      */
     public function get($index): mixed;
 
     /**
      * Adds an element to the sequence.
-     *
-     * @param mixed $newElement
-     *
-     * @return void
      */
     public function add(mixed $newElement): void;
 
@@ -139,27 +117,16 @@ interface SequenceInterface extends CollectionInterface
      * Removes the element at the given index, and returns it.
      *
      * @param int $index
-     *
-     * @return mixed
      */
     public function remove($index): mixed;
 
     /**
      * Adds all elements to the sequence.
-     *
-     * @param array $addedElements
-     *
-     * @return void
      */
     public function addAll(array $addedElements): void;
 
     /**
      * Updates the value at the given index.
-     *
-     * @param int $index
-     * @param mixed $value
-     *
-     * @return void
      */
     public function update(int $index, mixed $value): void;
 
@@ -169,8 +136,6 @@ interface SequenceInterface extends CollectionInterface
      * If the passed number is greater than the available number of elements, all will be removed.
      *
      * @param int $number
-     *
-     * @return SequenceInterface
      */
     public function drop($number): SequenceInterface;
 
@@ -220,9 +185,6 @@ interface SequenceInterface extends CollectionInterface
     /**
      * Creates a new collection by applying the passed callable to all elements
      * of the current collection.
-     *
-     * @param \Closure $callable
-     * @return CollectionInterface
      */
     public function map(\Closure $callable): CollectionInterface;
 }

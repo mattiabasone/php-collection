@@ -8,7 +8,6 @@ use PHPUnit\Framework\TestCase;
 
 class SetTest extends TestCase
 {
-    /** @var Set */
     private Set $set;
 
     protected function setUp(): void

@@ -31,8 +31,6 @@ interface ObjectBasics
      *
      * This can compare by referential equality (===), or in case of value objects like (\DateTime) compare
      * the individual properties of the objects; it's up to the implementation.
-     *
-     * @return bool
      */
     public function equals(ObjectBasics $other): bool;
 }

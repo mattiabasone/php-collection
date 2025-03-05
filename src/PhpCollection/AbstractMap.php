@@ -29,14 +29,8 @@ use PhpOption\Some;
  */
 class AbstractMap extends AbstractCollection implements \IteratorAggregate, MapInterface
 {
-    /**
-     * @var array
-     */
     protected array $elements;
 
-    /**
-     * @param array $elements
-     */
     public function __construct(array $elements = [])
     {
         $this->elements = $elements;
@@ -60,8 +54,6 @@ class AbstractMap extends AbstractCollection implements \IteratorAggregate, MapI
 
     /**
      * Sets all key/value pairs in the map.
-     *
-     * @param array $kvMap
      *
      * @return void
      */
@@ -157,8 +149,6 @@ class AbstractMap extends AbstractCollection implements \IteratorAggregate, MapI
      * Returns a new filtered map.
      *
      * @param callable $callable receives the element and must return true (= keep), or false (= remove)
-     *
-     * @return MapInterface
      */
     public function filter($callable): MapInterface
     {
@@ -169,8 +159,6 @@ class AbstractMap extends AbstractCollection implements \IteratorAggregate, MapI
      * Returns a new filtered map.
      *
      * @param callable $callable receives the element and must return true (= remove), or false (= keep)
-     *
-     * @return MapInterface
      */
     public function filterNot($callable): MapInterface
     {
