@@ -40,6 +40,7 @@ jobs:
         run: vendor/bin/phpunit --configuration phpunit.xml.dist --coverage-text
 
   phpstan:
+    name: "Static Analysis"
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -69,6 +70,7 @@ jobs:
         run: vendor/bin/phpstan
 
   cs-fixer:
+    name: "PHP CS Fixer"
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
