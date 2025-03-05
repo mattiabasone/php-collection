@@ -45,8 +45,6 @@ interface MapInterface extends CollectionInterface
 
     /**
      * Returns all elements in this collection.
-     *
-     * @return array
      */
     public function all(): array;
 
@@ -62,60 +60,37 @@ interface MapInterface extends CollectionInterface
     /**
      * Returns the value associated with the given key.
      *
-     * @param mixed $key
-     *
      * @return Some|None on V
      */
     public function get(mixed $key): Some|None;
 
     /**
      * Returns whether this map contains a given key.
-     *
-     * @param mixed $key
-     *
-     * @return bool
      */
     public function containsKey(mixed $key): bool;
 
     /**
      * Puts a new element in the map.
-     *
-     * @param mixed $key
-     * @param mixed $value
-     *
-     * @return void
      */
     public function set(mixed $key, mixed $value): void;
 
     /**
      * Removes an element from the map.
-     *
-     * @param mixed $key
-     *
-     * @return mixed
      */
     public function remove(mixed $key): mixed;
 
     /**
      * Adds all another map to this map, and returns itself.
-     *
-     * @param MapInterface $map
-     *
-     * @return MapInterface
      */
     public function addMap(MapInterface $map): MapInterface;
 
     /**
      * Returns an array with the keys.
-     *
-     * @return array
      */
     public function keys(): array;
 
     /**
      * Returns an array with the values.
-     *
-     * @return array
      */
     public function values(): array;
 
@@ -123,10 +98,6 @@ interface MapInterface extends CollectionInterface
      * Returns a new sequence by omitting the given number of elements from the beginning.
      *
      * If the passed number is greater than the available number of elements, all will be removed.
-     *
-     * @param int $number
-     *
-     * @return MapInterface
      */
     public function drop(int $number): MapInterface;
 
@@ -134,10 +105,6 @@ interface MapInterface extends CollectionInterface
      * Returns a new sequence by omitting the given number of elements from the end.
      *
      * If the passed number is greater than the available number of elements, all will be removed.
-     *
-     * @param int $number
-     *
-     * @return MapInterface
      */
     public function dropRight(int $number): MapInterface;
 
@@ -145,8 +112,6 @@ interface MapInterface extends CollectionInterface
      * Returns a new sequence by omitting elements from the beginning for as long as the callable returns true.
      *
      * @param \Closure $callable receives the element to drop as first argument, and returns true (drop), or false (stop)
-     *
-     * @return MapInterface
      */
     public function dropWhile(\Closure $callable): MapInterface;
 
@@ -156,20 +121,12 @@ interface MapInterface extends CollectionInterface
      *
      * If the passed number is greater than the available number of elements, then all elements
      * will be returned as a new collection.
-     *
-     * @param int $number
-     *
-     * @return MapInterface
      */
     public function take(int $number): MapInterface;
 
     /**
      * Creates a new collection by taking elements from the current collection
      * for as long as the callable returns true.
-     *
-     * @param \Closure $callable
-     *
-     * @return MapInterface
      */
     public function takeWhile(\Closure $callable): MapInterface;
 }

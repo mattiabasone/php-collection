@@ -13,21 +13,12 @@ use PhpOption\Option;
  */
 interface SetInterface extends CollectionInterface, \IteratorAggregate
 {
-    /**
-     * @param mixed $elem
-     * @return void
-     */
     public function add(mixed $elem): void;
 
-    /**
-     * @param array $elements
-     * @return void
-     */
     public function addAll(array $elements): void;
 
     /**
      * @param mixed|object|scalar $elem
-     * @return void
      */
     public function remove(mixed $elem): void;
 

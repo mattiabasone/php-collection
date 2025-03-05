@@ -35,9 +35,6 @@ class AbstractSequence extends AbstractCollection implements \IteratorAggregate,
 {
     protected array $elements;
 
-    /**
-     * @param array $elements
-     */
     public function __construct(array $elements = [])
     {
         $this->elements = array_values($elements);

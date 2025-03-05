@@ -27,17 +27,11 @@ interface CollectionInterface extends \Traversable, \Countable
 {
     /**
      * Returns whether this collection contains the passed element.
-     *
-     * @param mixed $searchedElement
-     *
-     * @return bool
      */
     public function contains(mixed $searchedElement): bool;
 
     /**
      * Returns whether the collection is empty.
-     *
-     * @return bool
      */
     public function isEmpty(): bool;
 
@@ -47,8 +41,6 @@ interface CollectionInterface extends \Traversable, \Countable
      * Removes all elements for which the provided callable returns false.
      *
      * @param \Closure $callable receives an element of the collection and must return true (= keep) or false (= remove)
-     *
-     * @return CollectionInterface
      */
     public function filter(\Closure $callable): CollectionInterface;
 
@@ -58,15 +50,12 @@ interface CollectionInterface extends \Traversable, \Countable
      * Removes all elements for which the provided callable returns true.
      *
      * @param callable $callable receives an element of the collection and must return true (= remove) or false (= keep)
-     *
-     * @return CollectionInterface
      */
     public function filterNot($callable): CollectionInterface;
 
     /**
      * Applies the callable to an initial value and each element, going left to right.
      *
-     * @param mixed $initialValue
      * @param \Closure $callable receives the current value (the first time this equals $initialValue) and the element
      *
      * @return mixed the last value returned by $callable, or $initialValue if collection is empty
@@ -76,7 +65,6 @@ interface CollectionInterface extends \Traversable, \Countable
     /**
      * Applies the callable to each element, and an initial value, going right to left.
      *
-     * @param mixed $initialValue
      * @param \Closure $callable receives the element, and the current value (the first time this equals $initialValue)
      * @return mixed the last value returned by $callable, or $initialValue if collection is empty
      */
